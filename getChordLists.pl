@@ -1,9 +1,9 @@
 use strict;
 my $color_file = "./data/colors.txt";
-my $regulator_file = "results.regulator.tfs.txt";
+my $regulator_file = "results.regulator.kinases.txt";
 my $out_file = "chord.lists.txt";
 my $qvalue_cutoff = 1E-05;
-my $tf_num = 50;
+my $kinase_num = 50;
 my $tg_num = 15;
 
 unless ( -e $color_file ){
@@ -13,7 +13,7 @@ unless ( -e $color_file ){
 }
 
 unless ( -e $regulator_file ){
-	print "The file 'results.regulator.tfs.txt' was not found. EXIT in 3 second.\n";
+	print "The file 'results.regulator.kinases.txt' was not found. EXIT in 3 second.\n";
 	sleep 3;
 	exit 1;
 }
@@ -47,15 +47,15 @@ if ( length( $m ) < 1 ){
 }
 
 if ( $ARGV[1] >= 1){
-	$tf_num = $ARGV[1];
+	$kinase_num = $ARGV[1];
 }
 
 if ( $ARGV[2] >= 1){
 	$tg_num = $ARGV[2];
 }
 
-my @tf;	
-my %pv;		# pvalue for tf enrichment
+my @kinase;	
+my %pv;		# pvalue for kinase enrichment
 my @tg;		# target gene
 my @b;		# regression coefficient beta
 my @b_pv;	# pvalue for beta
@@ -73,8 +73,8 @@ while ( $l = <IN>){
 	$l =~ s/ //g;
 	$l =~ s/"//g;
 	@t = split("\t", $l);
-	if ( $t[0] eq $m & $t[1] <= $tf_num){
-		push @tf, $t[3];
+	if ( $t[0] eq $m & $t[1] <= $kinase_num){
+		push @kinase, $t[3];
 		$pv{$t[3]} = $t[9];
 		@tg = split("\/", $t[13]);
 		@b = split("\/", $t[14]);
@@ -132,7 +132,7 @@ my $pvalue;
 my %node_col;
 my %id;
 
-foreach (@tf){
+foreach (@kinase){
 	$id{$_} = $j;
 	$pvalue = $pv{$_};
 	my $col = getColor(- log($pvalue) / log(10));
