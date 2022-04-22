@@ -86,6 +86,6 @@ Please refer to the [EXPLICIT](https://github.com/MaShisongLab/explicit#3-create
 
 ## Reference
 
-Peng Y<sup>#</sup>, Zuo W<sup>#</sup>, Qin Y, and Ma S. 2021. EXPLICIT-Kinase: a gene expression predictor for dissecting the functions of the Arabidopsis kinome. (#co-first author)<br><br>
+Peng Y<sup>#</sup>, Zuo W<sup>#</sup>, Zhou H, Miao F, Zhang Y, Qin Y, Liu Y, Long Y, and Ma S. 2022. EXPLICIT-Kinase: a gene expression predictor for dissecting the functions of the Arabidopsis kinome. Journal of Integrative Plant Biology (#co-first author)<br><br>
 Geng H<sup>#</sup>, Wang M<sup>#</sup>, Gong J<sup>#</sup>, Xu Y, and Ma S. 2021. An Arabidopsis expression predictor enables inference of transcriptional regulators for gene modules. Plant Journal 107:597-612. (#co-first author)
 
